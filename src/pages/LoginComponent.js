@@ -21,23 +21,24 @@ class LoginComponent extends React.Component{
         this.setState({password:newname});
     }
     redirectToRestaurants = () => {
-        axios.get('http://localhost:5000/users/')
-        .then(response => {
-            const datas = response.data;
-            for(let data of datas)
-            {
-                if(data.username==this.state.username){
-                    console.log(this.state.password);
-                    if(data.password==this.state.password){
-                        this.props.history.push("/restaurants/"+this.state.username);
-                    }
-                    else{
-                        alert('username or password is wrong :(');
-                        this.props.history.push("/");
-                    } 
-                }
-            }
-        })  
+//         axios.get('http://localhost:5000/users/')
+//         .then(response => {
+//             const datas = response.data;
+//             for(let data of datas)
+//             {
+//                 if(data.username==this.state.username){
+//                     console.log(this.state.password);
+//                     if(data.password==this.state.password){
+//                         this.props.history.push("/restaurants/"+this.state.username);
+//                     }
+//                     else{
+//                         alert('username or password is wrong :(');
+//                         this.props.history.push("/");
+//                     } 
+//                 }
+//             }
+//         })  
+    this.props.history.push("/restaurants/"+this.state.username);
     }
     redirectToSignup = () => {
         this.props.history.push("/signup");
