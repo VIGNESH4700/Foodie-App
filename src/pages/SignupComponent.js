@@ -41,7 +41,8 @@ class SignupComponent extends React.Component{
               password: this.state.password },
             { headers: { 'Content-Type': 'application/json' } }
           ).then(res => alert("signed up successfully! :)"));
-        this.props.history.replace("/");
+           .then(respose => this.props.history.replace("/"));
+           .catch(error => alert(error));
     }
     render(){
         return(
