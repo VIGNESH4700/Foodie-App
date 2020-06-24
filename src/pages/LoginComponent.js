@@ -27,16 +27,19 @@ class LoginComponent extends React.Component{
             for(let data of datas)
             {
                 if(data.username==this.state.username){
-                    console.log(this.state.password);
                     if(data.password==this.state.password){
                         this.props.history.push("/restaurants/"+this.state.username);
+                        return;
                     }
                     else{
-                        alert('username or password is wrong :(');
+                        alert('password is wrong :(');
                         this.props.history.push("/");
+                        return;
                     } 
                 }
             }
+            alert('username is wrong :(');
+            return;
         })  
     }
     redirectToSignup = () => {
