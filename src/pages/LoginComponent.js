@@ -38,7 +38,6 @@ class LoginComponent extends React.Component{
                 }
             }
         })  
-    this.props.history.push("/restaurants/"+this.state.username);
     }
     redirectToSignup = () => {
         this.props.history.push("/signup");
