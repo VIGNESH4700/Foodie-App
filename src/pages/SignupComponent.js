@@ -33,14 +33,14 @@ class SignupComponent extends React.Component{
         this.setState({confirmpassword:newname});
     }
     redirectToLogin = () => {
-//         axios.post(
-//             'http:/localhost:5000/users/add',
-//             { username: this.state.username,
-//               emailid: this.state.emailid,
-//               address: this.state.address,
-//               password: this.state.password },
-//             { headers: { 'Content-Type': 'application/json' } }
-//           ).then(res => alert("signed up successfully! :)"));
+        axios.post(
+            'https://backendfoodie.herokuapp.com/users/add',
+            { username: this.state.username,
+              emailid: this.state.emailid,
+              address: this.state.address,
+              password: this.state.password },
+            { headers: { 'Content-Type': 'application/json' } }
+          ).then(res => alert("signed up successfully! :)"));
         this.props.history.replace("/");
     }
     render(){
